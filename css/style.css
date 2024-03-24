@@ -38,7 +38,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    background: url('/public/bg-image-random-quote.svg') no-repeat;
+    background: url('./public/bg-image-random-quote.svg') no-repeat;
     background-size: contain;
     background-position: bottom left;
     z-index: 2;
