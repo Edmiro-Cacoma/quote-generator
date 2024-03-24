@@ -45,8 +45,6 @@ body {
 
 }
 
-
-
 .container .inner-container {
     display: flex;
     align-items: center;
@@ -61,31 +59,25 @@ body {
 
 #loading-indicator {
     display: none;
-    /* Initially hidden */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Center the indicator on the screen */
     width: 50px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background */
     border-radius: 50%;
     z-index: 100;
-    /* Ensure it appears above other elements */
 }
 
 .spinner {
     width: 100%;
     height: 100%;
     border: 5px solid #fff;
-    /* White border for the spinner */
     border-radius: 50%;
     border-top-color: rgba(0, 0, 0, 0.8);
-    /* Gray color for the animation */
     animation: spin 1s linear infinite;
-    /* Animation definition */
+
 }
 
 @keyframes spin {
