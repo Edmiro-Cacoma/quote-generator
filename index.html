@@ -8,17 +8,23 @@
     <meta name="keywords" content="html, css, javascript">
     <meta name="description" content="This is a solution for challenge of building a random quote generator">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
     <title>Random Quote Generator</title>
 </head>
 
 <body>
     <div class="container ">
         <div class="background-image"></div>
+
         <div class="inner-container">
+
             <div class="author-description">
 
-                <h4 class="author-name">
-                    George Bernard Shaw
+                <h4 id="author" class="author-name">
+
                 </h4>
                 <div class="tags">
                     <a href="">famous quotes</a>
@@ -26,11 +32,18 @@
                 </div>
 
             </div>
-
-            <h1 class="quoted-text">Learn from yesterday, live for today, hope for tomorrow</h1>
+            <div class="quoted-container">
+                <i class="fas fa-quote-left"></i>
+                <p id="quote" class="quoted-text"></p>
+                <i class="fas  fa-quote-right"></i>
+            </div>
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="spinner"></div>
+            </div>
         </div>
         <div class="controls">
-            <div><img src="/public/Regroup.svg" alt=""></div>
+
+            <div id="get-quote"><img src="/public/Regroup.svg" alt=""></div>
             <div class="vertical-line">
 
             </div>
@@ -42,7 +55,7 @@
     </div>
 
 
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>

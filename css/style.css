@@ -7,6 +7,7 @@
     --author-name: #ffffff;
     --quote-container: #20293A;
     --tags: #6466E9;
+    --borderRadius: 0.9375rem;
 }
 
 body {
@@ -27,7 +28,7 @@ body {
     position: absolute;
     width: 600px;
     height: 250px;
-    border-radius: 0.9375rem;
+    border-radius: var(--borderRadius);
 }
 
 .container::before {
@@ -44,27 +45,80 @@ body {
 
 }
 
+
+
 .container .inner-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--quote-container);
-    border-radius: 0.9375rem;
-    height: 250px;
     flex-wrap: wrap;
+    background-color: var(--quote-container);
+    border-radius: var(--borderRadius);
+    height: 250px;
+
 }
 
+#loading-indicator {
+    display: none;
+    /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the indicator on the screen */
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    border-radius: 50%;
+    z-index: 100;
+    /* Ensure it appears above other elements */
+}
 
+.spinner {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #fff;
+    /* White border for the spinner */
+    border-radius: 50%;
+    border-top-color: rgba(0, 0, 0, 0.8);
+    /* Gray color for the animation */
+    animation: spin 1s linear infinite;
+    /* Animation definition */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .container .author-name {
     color: var(--author-name);
     font-size: 1rem;
 }
 
+.container .quoted-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.container .quoted-container i {
+    color: var(--quoted-text);
+    font-size: 0.5rem;
+}
+
 .container .quoted-text {
     color: var(--quoted-text);
     font-size: 1.5rem;
+    margin: 0 10px;
+    text-align: center;
 }
 
 .container .author-description {
@@ -97,8 +151,9 @@ body {
     justify-content: center;
     gap: 10px;
     border: 0.125rem solid var(--quote-container);
-    border-radius: 0.9375rem;
+    border-radius: var(--borderRadius);
     margin: 30px auto;
+    cursor: pointer;
 }
 
 .container .controls img {
@@ -110,4 +165,33 @@ body {
     width: 0.125rem;
     height: 3rem;
     background-color: var(--quote-container);
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width:768px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    .container::before {
+        bottom: 7.1875rem;
+    }
+
+    .container .inner-container {
+        font-size: 0.8rem;
+
+    }
+
+    .container .quoted-text {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
 }
