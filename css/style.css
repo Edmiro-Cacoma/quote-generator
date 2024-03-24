@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+:root {
+    --main-bg: #111729;
+    --quoted-text: #97A3B6;
+    --author-name: #ffffff;
+    --quote-container: #20293A;
+    --tags: #6466E9;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--main-bg);
+    overflow: hidden;
+}
+
+
+.container {
+    position: absolute;
+    width: 600px;
+    height: 250px;
+    border-radius: 0.9375rem;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('/public/bg-image-random-quote.svg') no-repeat;
+    background-size: contain;
+    background-position: bottom left;
+    z-index: 2;
+
+}
+
+.container .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--quote-container);
+    border-radius: 0.9375rem;
+    height: 250px;
+    flex-wrap: wrap;
+}
+
+
+
+.container .author-name {
+    color: var(--author-name);
+    font-size: 1rem;
+}
+
+.container .quoted-text {
+    color: var(--quoted-text);
+    font-size: 1.5rem;
+}
+
+.container .author-description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.625rem;
+
+}
+
+.container .author-description .tags {
+    display: flex;
+    gap: 10px;
+}
+
+.container .author-description .tags a {
+    border-radius: 50px;
+    padding: 10px;
+    text-align: center;
+    border: 0.1rem solid var(--tags);
+    text-decoration: none;
+    color: var(--tags);
+}
+
+.container .controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 120px;
+    justify-content: center;
+    gap: 10px;
+    border: 0.125rem solid var(--quote-container);
+    border-radius: 0.9375rem;
+    margin: 30px auto;
+}
+
+.container .controls img {
+    width: 100%;
+}
+
+.container .controls .vertical-line {
+    position: relative;
+    width: 0.125rem;
+    height: 3rem;
+    background-color: var(--quote-container);
+}
